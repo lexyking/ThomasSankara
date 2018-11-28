@@ -1,0 +1,380 @@
+/*Initialisation of the page*/
+* {
+  box-sizing: border-box;
+}
+
+/*the html and body tag*/
+html,
+body {
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+  padding: 2px;
+  font: Arial, Helvetica, sans-serif;
+  line-height: 1.7rem;
+  background-color: rgba(46, 139, 87, 1);
+}
+
+/*general settings*/
+h1, h2 {
+  text-align: center;
+  letter-spacing: 0.3rem;
+  color: rgba(4, 64, 56, 1);
+  background-color: rgba(175, 203, 32, 0.6);
+  border-radius: 25px;
+  border-bottom: 2px solid rgba(205, 45, 48, 1);
+  padding: 0.5rem;
+}
+h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+p {
+  text-indent: 30px;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+.timeline ul {
+  padding-left: 40px;
+}
+.gras {
+  font-weight: bold;
+}
+li {
+  list-style-type: none;
+}
+
+/*the wrapper of the page*/
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(10px, auto);
+}
+
+/*the header of the page is just a picture with a background large enough to fill the whole space*/
+header {
+  grid-column: 1 / auto-fill;
+  background-color: rgba(135, 131, 96, 1);
+  text-align: center;
+}
+
+header img {
+  max-width: 100%;
+  max-height: 120px;
+}
+
+nav{
+  grid-column: 1 / auto-fit;
+  grid-row: 2;
+}
+
+.nav_top{
+  display: flex;
+}
+
+.nav_top_a{
+  flex: 1;
+}
+
+/*style the links*/
+a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+  background-color: rgba(4, 64, 56, 1);
+  color: rgba(175, 203, 32, 0.7);
+  border: 2px solid rgba(135, 131, 96, 0);
+  padding: 10px;
+}
+a:hover {
+  background-color: rgba(175, 203, 32, 0.7);
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+  color: rgba(4, 64, 56, 1);
+}
+
+/*define the boundaries of the main section, first as a child of the wrapper grid. Then define itself as a grid*/
+main {
+  grid-column: 1 / auto-fill;
+  grid-row: 3;
+  max-width: 100%;
+}
+
+.page_content {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 0px;
+}
+
+/*the intro akes the whole first row of this grid(main)*/
+.intro {
+  grid-column: 1 / 3;
+  background-color: rgba(4, 64, 56, 0.5);
+  padding: 10px;
+}
+.intro img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  max-width: 80%;
+}
+
+/*vertical menu, left side of the main*/
+aside {
+  grid-column: 1;
+  grid-row: 2;
+}
+aside ul {
+  list-style-type: none;
+padding: 0;
+}
+aside a {
+  margin-bottom: 10px;
+}
+aside > p {
+  margin: 0;
+  color: rgba(4, 64, 56, 1);
+  font-weight: bold;
+  background: rgba(135, 131, 96, 0.5);
+  padding: 1vw 0;
+}
+
+/*The flag on the side menu*/
+.egypt, .liberia, .ghana, .nigeria, .kenya, .chad{
+  position: relative;
+}
+
+.egypt:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://images-na.ssl-images-amazon.com/images/I/51e6ijdh78L._SX679_.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0%;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+ }
+.liberia:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_Liberia.svg/2000px-Flag_of_Liberia.svg.png');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0%;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+ }
+.ghana:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://buzzghana.com/wp-content/uploads/2013/09/Ghana-Flag.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+  
+ }
+.nigeria:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://www.onlinestores.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/n/i/nigeria-nylon_2.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+ }
+.kenya:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://images-na.ssl-images-amazon.com/images/I/31wUMDVrsyL._SX355_.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+ }
+.chad:before{
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://www.wpmap.org/wp-content/uploads/2016/01/chadflagpicture2.png');
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid green;
+  bottom: 0;
+  left: 25%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform ease-out 250ms,
+    left ease-out 250ms;
+  
+ }
+
+.egypt:hover:before, .liberia:hover:before, .ghana:hover:before, .nigeria:hover:before, .kenya:hover:before, .chad:hover:before{
+  transform: scale(1);
+  left: 100%;
+  z-index: 2;
+}
+
+/*sections on the right side of the main*/
+.main_section {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0 10px;
+  background-color: rgba(135, 131, 96, 0.5);
+}
+
+/*style the gallery section*/
+.gallery_img {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery_img li:nth-child(even) {
+  flex: 1 1 250px;
+}
+.grayscale {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+.grayscale:hover {
+  transform: scale(1.05);
+}
+.gallery_img li {
+  flex: 1 1 150px;
+  padding: 2px;
+}
+
+/*style the quotes section*/
+.quotes_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1rem;
+}
+.art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.art__text {
+  position: relative;
+  z-index: 1;
+  padding: 15px;
+  background: rgba(175, 203, 32, 0.7);
+  width: 100%;
+  color: rgba(4, 4, 56, 1);
+  font-weight: bold;
+}
+.art_one {
+  background-image: url("https://i2.wp.com/www.thomassankara.net/wp-content/uploads/2014/12/thomas-sankara-1.jpg");
+  grid-row-end: span 2;
+}
+.art_two {
+  background-image: url("http://lvsl.fr/wp-content/uploads/2017/10/Thomas.jpg");
+}
+.art_three {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_LwixUFBJi5TNPOJdpXpsbu19w3So2NXeQnbnqh43nDVmCtS2");
+  grid-row-end: span 2;
+}
+.art_four {
+  background-image: url("http://www.thepublishingeye.com/elbaco/wp-content/uploads/2013/03/22-sankara.jpg");
+}
+.art:hover {
+  transform: scale(1.05);
+  &:after {
+    opacity: 0;
+  }
+}
+
+/*the author of the quotes*/
+.author {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*the external link section at the bottom of the page*/
+.ext_link {
+  grid-column: 1 / 3;
+  background-color: rgba(4, 64, 56, 0.5);
+  padding: 10px;
+}
+
+/*the footer of the page*/
+footer {
+  grid-column: 1 / 13;
+  grid-row: 4;
+  max-width: 100%;
+  background-color: rgba(135, 131, 96, 1);
+  color: rgba(0, 56, 67, 1);
+}
+footer > p {
+  text-align: center;
+}
+
+/*Responsive Design*/
+@media screen and (max-width: 600px) {
+  .intro img {
+    max-width: 40%;
+  }
+  .nav_top{
+    flex-direction: column;
+  }
+  p,
+  h,
+  .list_design > li {
+    font-size: 0.9em;
+  }
+  /*use javascript on this one*/
+  aside{
+    display: none;
+  }
+  .main_section {   
+    grid-column: 1 /-1;
+  grid-row: 2;
+}
+}
